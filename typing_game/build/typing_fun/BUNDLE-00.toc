@@ -1,3 +1,0 @@
-([('typing_fun',
-   '/Users/caitlyntrail/typing_game/dist/typing_fun',
-   'EXECUTABLE')],)
