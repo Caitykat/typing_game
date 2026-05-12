@@ -10,9 +10,7 @@ numpy,
 pgzero
 
 ## How to run the code!!!
-There are two ways to run this code (assuming you dont want to run the code directly). I have a release on github for which ever way you want to run it. If you are on windows or linux, I have an executable file. If you are on Macos, I have a terminal file that you can run when downloaded. No matter which way you may want to do this, you are in luck because I have instructions!
-
-Windows and linux executable file - In order to reach this executable file you need to go to my github (caitykat, repository is typing_game). Navigate to the release v.2.0.0 (windows). Within this release you should see a file "typing_fun.zip". Within this zip file is the executable file. Double click on the application and the game should run! Enjoy!
+There are two ways to run this code. I have a release on github for it. If you are on windows or linux, you will have to run the code directly sadly. I'm working on a fix for this. If you are on Macos, I have a terminal file that you can run when downloaded. No matter which way you may want to do this, you are in luck because I have instructions!
 
 MacOS terminal - In order to reach this file you need to go to my github (Caitykat, repository is typing_game). Navigate to the second release v.1.0.0 (macOS). Within this release you should see a file "typing_fun.app.zip". Double click on this file to download it and try to open it. One of two things may happen. It will either open the game and there you go! If this doesnt happen and instead the computer blocks it from running, this is an easy fix. Go to your system settings. Find privacy and security and scroll to the bottom. You should see a part that says ""typing_fun" was blocked to protect your mac." Click open anyways and input your password. Then boom! The game is running. Enjoy!
 
