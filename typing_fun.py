@@ -152,6 +152,9 @@ def on_key_down(key):
     #takes you to the start screen + resets score
     if screen_choice == "Death" and key == keys.BACKSPACE:
         score = 0
+        number_words.clear()
+        x_pos_list.clear()
+        y_pos_list.clear()
         screen_choice = "Start"
 
     #If you are at the end of the game and you press return
@@ -257,10 +260,14 @@ def draw():
     global x_pos, y_pos, text_choice, number_words
     global number, x_pos_list,score, screen_choice
     global difficulty, error, score, high_score
+
     #resets the screen
     screen.clear()
+
     #If its the start screen it draws start
     if screen_choice == "Start":
+
+        #Text for the start screen
         screen.draw.text("Press enter to start", 
                          (WIDTH/2 - 120, HEIGHT/2 - 40), color = "white")
         screen.draw.text(f"Current difficulty is:" + difficulty ,
@@ -271,24 +278,42 @@ def draw():
                           (WIDTH/2 -120, HEIGHT/2 + 20), color = "white")
         screen.draw.text("Press H to change difficulty to hard", 
                          (WIDTH/2 - 120, HEIGHT /2 + 40))
+        
+        #Only appers if you dont have a difficulty
         if error == "Select":
             screen.draw.text("ERROR: No game difficulty selected", 
                              (WIDTH/2 - 120, HEIGHT/2 +60) , color ="red")
+            
+        #Draws over the error to get rid of it once gone
         if error != "Select":
-            screen.draw.text("ERROR: No game difficulty selected", (WIDTH/2 - 120, HEIGHT/2 +60) , color ="black")
+            screen.draw.text("ERROR: No game difficulty selected", 
+                             (WIDTH/2 - 120, HEIGHT/2 +60) , color ="black")
+            
+    #Draws the play screen
     if screen_choice == "Play":
+
+        #Goes through each word on the screen and draws them
         for i, word in enumerate(number_words):
             screen.draw.text(word, (x_pos_list[i], y_pos_list[i]))
+
+        #Draws your text
         screen.draw.text(typed_text, (20, 170), color="white")
+
+        #Scores
         screen.draw.text(f"High score :"+ str(high_score), (650, 150), color = "white")
         screen.draw.text(f"Score :"+ str(score), (650, 170), color = "white")
+
+    #Draws the death screen
     if screen_choice == "Death":
         screen.draw.text("Game Over", (WIDTH/2 -80, HEIGHT/2 -40), color = "white")
+
+        #F strings to display your score and high score
         screen.draw.text(f"Score :"+ str(score), (WIDTH/2 -80, (HEIGHT/2 -20)), color = "white")
         screen.draw.text(f"High score :"+ str(high_score), (WIDTH/2 -80, (HEIGHT/2)), color = "white")
+
         screen.draw.text("Press enter to restart the game", (WIDTH/2 - 80, HEIGHT/2 +20), color = "white")
         screen.draw.text("Press backspace to return to the start screen", (WIDTH/2 - 80, HEIGHT/2 +40), color = "white")
 
         
-
+#Runs the game! Have fun!
 pgzrun.go()
